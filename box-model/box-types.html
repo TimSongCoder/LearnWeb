@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS Box types</title>
+  <style>
+  p {
+  padding : 1em;
+  border  : 1px solid black;
+}
+
+span {
+  padding : 0.5em;
+  border  : 1px solid green;
+
+  /* That makes the box visible, regardless of its type */
+  background-color: yellow;
+}
+
+.inline       { display: inline; margin: 50px;
+/* The margin property only affect the surrounding text content, did
+not affect other block level box, say, p element in this example.*/
+   }
+.block        { display: block;        }
+.inline-block { display: inline-block;
+margin: 50px;
+/* inline-block is a integrity box by itself. The margin property
+affect other block level box and surround text content.*/}
+
+  </style>
+</head>
+<body>
+<main>
+  <article>
+    <p>
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   <span class="inline">Mauris tempus turpis id ante mollis dignissim.</span>
+   Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  <span class="block">Mauris tempus turpis id ante mollis dignissim.</span>
+  Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  <span class="inline-block">Mauris tempus turpis id ante mollis dignissim.</span>
+  Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+</p>
+  </article>
+</main>
+</body>
+</html>
